@@ -1,10 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import { ClerkProvider, 
-         SignInButton, 
-         SignedIn, 
-         SignedOut, 
-         UserButton } from '@clerk/nextjs'
+  SignInButton, 
+  SignedIn, 
+  SignedOut, 
+  UserButton } from '@clerk/nextjs';
+import type { Metadata } from "next";  //global imports
+
+import { ModalProvider } from '@/providers/modal-provider'; //local import
+
+import "./globals.css";
+
+export const metadata = {
+  title:'Admin Dashboard',
+  description: 'Admin Dashboard',
+}
+
 
 export default function RootLayout({
   children,
@@ -23,6 +32,7 @@ export default function RootLayout({
             <UserButton/>
           </SignedIn>
           
+          <ModalProvider />
           {children}
         </body>
       </html>
