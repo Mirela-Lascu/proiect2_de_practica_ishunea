@@ -6,6 +6,7 @@ import { ClerkProvider,
 import type { Metadata } from "next";  //global imports
 
 import { ModalProvider } from '@/providers/modal-provider'; //local import
+import { ToasterProvider } from '@/providers/toast-provider';
 
 import "./globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
@@ -31,7 +33,7 @@ export default function RootLayout({
           <SignedIn>
             <UserButton/>
           </SignedIn>
-          
+          <ToasterProvider/>
           <ModalProvider />
           {children}
         </body>
