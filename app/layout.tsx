@@ -31,7 +31,7 @@ export default function RootLayout({
             <SignInButton />
           </SignedOut>
           <SignedIn>
-            <UserButton/>
+            
           </SignedIn>
           <ToasterProvider/>
           <ModalProvider />
