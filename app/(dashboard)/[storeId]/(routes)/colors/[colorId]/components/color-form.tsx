@@ -22,7 +22,6 @@ import {
     FormMessage} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
-import ImageUpload from "@/components/ui/image-upload";
 
 
 const formSchema = z.object({

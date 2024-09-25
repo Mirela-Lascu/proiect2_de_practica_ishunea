@@ -3,7 +3,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 
 import { CellAction } from "./cell-action";
-import { string } from "zod";
 
 export type ProductColumn = {
   id: string;
