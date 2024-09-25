@@ -3,7 +3,6 @@ import { CreditCard, DollarSign, Package } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import prismadb from "@/lib/prismadb";
 import { formatter } from "@/lib/utils";
 import { getTotalRevenue } from "@/actions/get-total-revenue";
 import { getSalesCount } from "@/actions/get-sales-count";
