@@ -161,11 +161,27 @@ export async function DELETE (
             return new NextResponse("Unauthorized", { status: 403});
         }
     
-       const product = await prismadb.product.deleteMany({
+       // Delete related OrderItems
+       await prismadb.orderItem.deleteMany({
         where: {
-            id: params.productId,
+            productId: params.productId
         }
-       });
+        });
+
+        // Delete related Images
+        await prismadb.image.deleteMany({
+            where: {
+                productId: params.productId
+            }
+        });
+
+        // Finally, delete the product
+        const product = await prismadb.product.delete({
+            where: {
+                id: params.productId,
+                storeId: params.storeId
+            }
+        });
 
        return NextResponse.json(product);
     } catch (error) {

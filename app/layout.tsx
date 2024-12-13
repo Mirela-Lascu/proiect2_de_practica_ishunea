@@ -21,21 +21,20 @@ export default function RootLayout({
 }) {
 
   return (
-    <ClerkProvider afterSignOutUrl="/">
-      <html lang="en">
+    <html lang="en">
         <body>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            <SignedOut>
-            </SignedOut>
-            <SignedIn>
-              
-            </SignedIn>
-            <ToasterProvider/>
-            <ModalProvider />
-            {children}
-          </ThemeProvider>
+          <ClerkProvider afterSignOutUrl="/">
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+              <SignedOut>
+              </SignedOut>
+              <SignedIn>
+              </SignedIn>
+              <ToasterProvider/>
+              <ModalProvider />
+              {children}
+            </ThemeProvider>
+          </ClerkProvider>
         </body>
       </html>
-    </ClerkProvider>
   )
 }
